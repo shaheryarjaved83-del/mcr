@@ -1,0 +1,213 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* MCR — The Art of Movement: brand tokens */
+:root {
+  --mcr-white: #ffffff;
+  --mcr-ivory: #f7f8f4;
+  --mcr-forest: #173f35;
+  --mcr-sage: #91ab9a;
+  --mcr-mint: #ddece1;
+  --mcr-stone: #e8e9e3;
+  --mcr-charcoal: #202621;
+  --mcr-muted: #68736b;
+
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 200ms;
+  --duration-base: 450ms;
+  --duration-slow: 900ms;
+
+  --header-height: 76px;
+  --section-space: clamp(5rem, 11vw, 10rem);
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+
+  --background: var(--mcr-white);
+  --foreground: var(--mcr-charcoal);
+  --card: var(--mcr-white);
+  --card-foreground: var(--mcr-charcoal);
+  --popover: var(--mcr-white);
+  --popover-foreground: var(--mcr-charcoal);
+  --primary: var(--mcr-forest);
+  --primary-foreground: var(--mcr-ivory);
+  --secondary: var(--mcr-mint);
+  --secondary-foreground: var(--mcr-forest);
+  --muted: var(--mcr-stone);
+  --muted-foreground: var(--mcr-muted);
+  --accent: var(--mcr-mint);
+  --accent-foreground: var(--mcr-forest);
+  --destructive: #b4412f;
+  --border: #dcdfd6;
+  --input: #cfd4ca;
+  --ring: var(--mcr-forest);
+  --radius: 0.375rem;
+  --chart-1: var(--mcr-forest);
+  --chart-2: var(--mcr-sage);
+  --chart-3: var(--mcr-mint);
+  --chart-4: var(--mcr-stone);
+  --chart-5: var(--mcr-muted);
+  --sidebar: var(--mcr-ivory);
+  --sidebar-foreground: var(--mcr-charcoal);
+  --sidebar-primary: var(--mcr-forest);
+  --sidebar-primary-foreground: var(--mcr-ivory);
+  --sidebar-accent: var(--mcr-mint);
+  --sidebar-accent-foreground: var(--mcr-forest);
+  --sidebar-border: #dcdfd6;
+  --sidebar-ring: var(--mcr-forest);
+}
+
+@theme inline {
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+
+  --color-ivory: var(--mcr-ivory);
+  --color-forest: var(--mcr-forest);
+  --color-sage: var(--mcr-sage);
+  --color-mint: var(--mcr-mint);
+  --color-stone: var(--mcr-stone);
+  --color-charcoal: var(--mcr-charcoal);
+  --color-ink-muted: var(--mcr-muted);
+
+  --ease-expo: var(--ease-out-expo);
+  --ease-soft: var(--ease-in-out-soft);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* Fluid editorial type scale */
+@utility text-display-xl {
+  font-size: clamp(3.1rem, 10.5vw, 10.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+  font-weight: 500;
+}
+@utility text-display-lg {
+  font-size: clamp(2.6rem, 7.2vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+@utility text-display-md {
+  font-size: clamp(2.15rem, 4.8vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-weight: 500;
+}
+@utility text-display-sm {
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  font-weight: 500;
+}
+@utility text-lede {
+  font-size: clamp(1.05rem, 1.35vw, 1.3rem);
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+}
+@utility text-eyebrow {
+  font-size: 0.72rem;
+  line-height: 1;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+@utility container-mcr {
+  width: 100%;
+  max-width: 1480px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+@utility section-y {
+  padding-block: var(--section-space);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-padding-top: calc(var(--header-height) + 1rem);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: 'ss01', 'cv11';
+    overflow-x: clip;
+  }
+  ::selection {
+    background: var(--mcr-mint);
+    color: var(--mcr-forest);
+  }
+  :focus-visible {
+    outline: 2px solid var(--mcr-forest);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  .font-serif {
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes mcr-scroll-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  60%,
+  100% {
+    transform: translateY(220%);
+  }
+}
+.animate-scroll-cue {
+  animation: mcr-scroll-cue 2.2s var(--ease-out-expo) infinite;
+}
